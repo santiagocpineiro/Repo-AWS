@@ -55,7 +55,7 @@ Asegúrate de tener lo siguiente instalado:
   ```
 - `cdklocal` (CLI local de CDK):
   ```bash
-  npm install -g aws-cdk-local aws-cdk
+  npm install -g aws-mak-local aws-cdk
   ```
 
 

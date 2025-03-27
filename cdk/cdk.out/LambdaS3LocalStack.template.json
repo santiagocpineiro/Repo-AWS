@@ -94,14 +94,14 @@
    "Properties": {
     "Code": {
      "S3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
-     "S3Key": "769bf4610947f8934913b50a9fcc95fa598093e0f238c1d9161c79f9225151e2.zip"
+     "S3Key": "aa9b12dad7ca329c83f72f08458646874a34088e2fdcb92dbc89eb6da710775f.zip"
     },
     "Environment": {
      "Variables": {
       "BUCKET_NAME": {
        "Ref": "LocalBucket58A5729A"
       },
-      "LOCALSTACK_ENDPOINT": "http://172.17.208.98:4566"
+      "LOCALSTACK_ENDPOINT": "http://172.29.47.152:4566"
      }
     },
     "FunctionName": "SaveToS3Function",
@@ -121,7 +121,7 @@
    ],
    "Metadata": {
     "aws:cdk:path": "LambdaS3LocalStack/SaveToS3Function/Resource",
-    "aws:asset:path": "asset.769bf4610947f8934913b50a9fcc95fa598093e0f238c1d9161c79f9225151e2",
+    "aws:asset:path": "asset.aa9b12dad7ca329c83f72f08458646874a34088e2fdcb92dbc89eb6da710775f",
     "aws:asset:is-bundled": false,
     "aws:asset:property": "Code"
    }

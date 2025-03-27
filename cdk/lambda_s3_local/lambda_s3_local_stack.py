@@ -18,7 +18,7 @@ class LambdaS3LocalStack(Stack):
             timeout=Duration.seconds(10),
             environment={
                 "BUCKET_NAME": bucket.bucket_name,
-                "LOCALSTACK_ENDPOINT": "http://172.17.208.98:4566"
+                "LOCALSTACK_ENDPOINT": "http://172.29.47.152:4566"
             }
         )
 
