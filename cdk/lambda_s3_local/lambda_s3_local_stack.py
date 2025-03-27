@@ -14,7 +14,7 @@ class LambdaS3Stack(Stack):
                                 removal_policy=RemovalPolicy.DESTROY)
 
         # Crear la función Lambda
-        lambda_function = _lambda.Function(self, "LogIngestLambda",
+        lambda_function = _lambda.Function(self, "lambda_function",
             runtime=_lambda.Runtime.PYTHON_3_9,
             handler="handler.lambda_handler",
             code=_lambda.Code.from_asset("lambda_s3_local/lambda_code"),

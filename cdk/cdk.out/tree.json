@@ -32,17 +32,17 @@
               "version": "2.136.0"
             }
           },
-          "LogIngestLambda": {
-            "id": "LogIngestLambda",
-            "path": "LambdaS3Stack/LogIngestLambda",
+          "lambda_function": {
+            "id": "lambda_function",
+            "path": "LambdaS3Stack/lambda_function",
             "children": {
               "ServiceRole": {
                 "id": "ServiceRole",
-                "path": "LambdaS3Stack/LogIngestLambda/ServiceRole",
+                "path": "LambdaS3Stack/lambda_function/ServiceRole",
                 "children": {
                   "ImportServiceRole": {
                     "id": "ImportServiceRole",
-                    "path": "LambdaS3Stack/LogIngestLambda/ServiceRole/ImportServiceRole",
+                    "path": "LambdaS3Stack/lambda_function/ServiceRole/ImportServiceRole",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.Resource",
                       "version": "2.136.0"
@@ -50,7 +50,7 @@
                   },
                   "Resource": {
                     "id": "Resource",
-                    "path": "LambdaS3Stack/LogIngestLambda/ServiceRole/Resource",
+                    "path": "LambdaS3Stack/lambda_function/ServiceRole/Resource",
                     "attributes": {
                       "aws:cdk:cloudformation:type": "AWS::IAM::Role",
                       "aws:cdk:cloudformation:props": {
@@ -89,11 +89,11 @@
                   },
                   "DefaultPolicy": {
                     "id": "DefaultPolicy",
-                    "path": "LambdaS3Stack/LogIngestLambda/ServiceRole/DefaultPolicy",
+                    "path": "LambdaS3Stack/lambda_function/ServiceRole/DefaultPolicy",
                     "children": {
                       "Resource": {
                         "id": "Resource",
-                        "path": "LambdaS3Stack/LogIngestLambda/ServiceRole/DefaultPolicy/Resource",
+                        "path": "LambdaS3Stack/lambda_function/ServiceRole/DefaultPolicy/Resource",
                         "attributes": {
                           "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
                           "aws:cdk:cloudformation:props": {
@@ -154,10 +154,10 @@
                               ],
                               "Version": "2012-10-17"
                             },
-                            "policyName": "LogIngestLambdaServiceRoleDefaultPolicy7610BDD2",
+                            "policyName": "lambdafunctionServiceRoleDefaultPolicyC6E2CA6E",
                             "roles": [
                               {
-                                "Ref": "LogIngestLambdaServiceRole5DCF7EC1"
+                                "Ref": "lambdafunctionServiceRole85538ADB"
                               }
                             ]
                           }
@@ -181,11 +181,11 @@
               },
               "Code": {
                 "id": "Code",
-                "path": "LambdaS3Stack/LogIngestLambda/Code",
+                "path": "LambdaS3Stack/lambda_function/Code",
                 "children": {
                   "Stage": {
                     "id": "Stage",
-                    "path": "LambdaS3Stack/LogIngestLambda/Code/Stage",
+                    "path": "LambdaS3Stack/lambda_function/Code/Stage",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.AssetStaging",
                       "version": "2.136.0"
@@ -193,7 +193,7 @@
                   },
                   "AssetBucket": {
                     "id": "AssetBucket",
-                    "path": "LambdaS3Stack/LogIngestLambda/Code/AssetBucket",
+                    "path": "LambdaS3Stack/lambda_function/Code/AssetBucket",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_s3.BucketBase",
                       "version": "2.136.0"
@@ -207,13 +207,13 @@
               },
               "Resource": {
                 "id": "Resource",
-                "path": "LambdaS3Stack/LogIngestLambda/Resource",
+                "path": "LambdaS3Stack/lambda_function/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": "cdk-hnb659fds-assets-000000000000-us-east-1",
-                      "s3Key": "faa2c2d81fd46757480ceecc52ac837d3b91d1a18dc51e44e37c9b914dd31d9d.zip"
+                      "s3Key": "0ca65c2b1443cae9b4c6efa1f8d5048bbd26bf31f2b5740426e64f4044c18029.zip"
                     },
                     "environment": {
                       "variables": {
@@ -225,7 +225,7 @@
                     "handler": "handler.lambda_handler",
                     "role": {
                       "Fn::GetAtt": [
-                        "LogIngestLambdaServiceRole5DCF7EC1",
+                        "lambdafunctionServiceRole85538ADB",
                         "Arn"
                       ]
                     },

@@ -24,8 +24,8 @@ def lambda_handler(event, context):
             "body": json.dumps({"message": "Log almacenado en S3", "file_path": file_path})
         }
 
-    except Exception as e:
-        return {
-            "statusCode": 500,
-            "body": json.dumps({"error": str(e)})
-        }
+        except Exception as e:
+            return {
+                "statusCode": 500,
+                "body": json.dumps({"error": str(e)})
+            }
