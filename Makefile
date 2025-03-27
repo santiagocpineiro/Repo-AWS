@@ -1,9 +1,9 @@
 ### VARIABLES ###
 CDK=npx aws-cdk-local
-STACK_NAME=LambdaS3LocalStack
+STACK_NAME=LambdaS3Stack
 ENDPOINT=http://localhost:4566
 BUCKET_NAME=my-local-bucket
-LAMBDA_NAME=SaveToS3Function
+LAMBDA_NAME=lambda_function
 
 ### CDK ###
 bootstrap:

@@ -1,4 +1,4 @@
-#!/mnt/c/Users/ragrasba/Downloads/personal_local_aws/personal_local_aws/cdk/.venv/bin/python3
+#!/home/ragrasba/Repo-AWS/cdk/.venv/bin/python3
 
 # $Id: rst2odt.py 5839 2009-01-07 19:09:28Z dkuhlman $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

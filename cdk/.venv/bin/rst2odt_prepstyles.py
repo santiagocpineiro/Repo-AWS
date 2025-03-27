@@ -1,4 +1,4 @@
-#!/mnt/c/Users/ragrasba/Downloads/personal_local_aws/personal_local_aws/cdk/.venv/bin/python3
+#!/home/ragrasba/Repo-AWS/cdk/.venv/bin/python3
 
 # $Id: rst2odt_prepstyles.py 8346 2019-08-26 12:11:32Z milde $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

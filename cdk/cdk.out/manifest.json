@@ -1,28 +1,28 @@
 {
   "version": "36.0.0",
   "artifacts": {
-    "LambdaS3LocalStack.assets": {
+    "LambdaS3Stack.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "LambdaS3LocalStack.assets.json",
+        "file": "LambdaS3Stack.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "LambdaS3LocalStack": {
+    "LambdaS3Stack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://000000000000/us-east-1",
       "properties": {
-        "templateFile": "LambdaS3LocalStack.template.json",
+        "templateFile": "LambdaS3Stack.template.json",
         "terminationProtection": false,
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-deploy-role-000000000000-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-cfn-exec-role-000000000000-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-000000000000-us-east-1/668a059009a7d75434056a5a8ec3df0ed41c023ea46fdf5e7011451b851502cb.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-000000000000-us-east-1/cb744fc5f605adb950438b08a83582d9a4dbc5ca6a0b833bf2c827d6423c6610.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "LambdaS3LocalStack.assets"
+          "LambdaS3Stack.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-lookup-role-000000000000-us-east-1",
@@ -31,53 +31,53 @@
         }
       },
       "dependencies": [
-        "LambdaS3LocalStack.assets"
+        "LambdaS3Stack.assets"
       ],
       "metadata": {
-        "/LambdaS3LocalStack/LocalBucket/Resource": [
+        "/LambdaS3Stack/LogsBucket/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "LocalBucket58A5729A"
+            "data": "LogsBucket9C4D8843"
           }
         ],
-        "/LambdaS3LocalStack/SaveToS3Function/ServiceRole/Resource": [
+        "/LambdaS3Stack/LogIngestLambda/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SaveToS3FunctionServiceRole5A767235"
+            "data": "LogIngestLambdaServiceRole5DCF7EC1"
           }
         ],
-        "/LambdaS3LocalStack/SaveToS3Function/ServiceRole/DefaultPolicy/Resource": [
+        "/LambdaS3Stack/LogIngestLambda/ServiceRole/DefaultPolicy/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SaveToS3FunctionServiceRoleDefaultPolicy1064B9C8"
+            "data": "LogIngestLambdaServiceRoleDefaultPolicy7610BDD2"
           }
         ],
-        "/LambdaS3LocalStack/SaveToS3Function/Resource": [
+        "/LambdaS3Stack/LogIngestLambda/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SaveToS3Function70C2293A"
+            "data": "LogIngestLambda02154EEA"
           }
         ],
-        "/LambdaS3LocalStack/CDKMetadata/Default": [
+        "/LambdaS3Stack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/LambdaS3LocalStack/BootstrapVersion": [
+        "/LambdaS3Stack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/LambdaS3LocalStack/CheckBootstrapVersion": [
+        "/LambdaS3Stack/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "LambdaS3LocalStack"
+      "displayName": "LambdaS3Stack"
     },
     "Tree": {
       "type": "cdk:tree",

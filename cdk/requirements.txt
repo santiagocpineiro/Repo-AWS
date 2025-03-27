@@ -2,6 +2,6 @@ aws-cdk-lib==2.136.0
 constructs>=10.0.0,<11.0.0
 awscli-local==0.22.0
 fastapi
+uvicorn
 boto3
-mangum
-botocore
+pyspark

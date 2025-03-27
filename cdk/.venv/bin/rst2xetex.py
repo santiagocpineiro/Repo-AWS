@@ -1,4 +1,4 @@
-#!/mnt/c/Users/ragrasba/Downloads/personal_local_aws/personal_local_aws/cdk/.venv/bin/python3
+#!/home/ragrasba/Repo-AWS/cdk/.venv/bin/python3
 
 # $Id: rst2xetex.py 7847 2015-03-17 17:30:47Z milde $
 # Author: Guenter Milde
