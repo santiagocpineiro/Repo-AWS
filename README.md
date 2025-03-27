@@ -58,6 +58,7 @@ Asegúrate de tener lo siguiente instalado:
   npm install -g aws-cdk-local aws-cdk
   ```
 
+
 ---
 
 ## ⚙️ Instalación paso a paso
