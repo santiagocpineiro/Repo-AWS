@@ -8,4 +8,6 @@ LambdaS3LocalStack(app, "LambdaS3LocalStack",
     env=cdk.Environment(account="000000000000", region="us-east-1")
 )
 
+
+
 app.synth()
