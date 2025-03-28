@@ -45,3 +45,6 @@ clean:
 
 run-api:
 	python3 api/api.py
+
+run-glue:
+	python3 simulate_glue.py
