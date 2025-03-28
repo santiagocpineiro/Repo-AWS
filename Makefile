@@ -40,3 +40,6 @@ get-object:
 
 clean:
 	rm -f response.json
+
+run-api:
+	python3 api/api.py
