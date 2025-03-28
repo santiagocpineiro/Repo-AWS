@@ -7,7 +7,7 @@ import uvicorn
 api = FastAPI()
 
 # Configurar AWS Lambda en LocalStack
-LAMBDA_NAME = "LambdaS3Stack-lambdafunction45C982D3-2074fa7a"
+LAMBDA_NAME = "LambdaS3Stack-lambdafunction45C982D3-1b295e1f"
 LOCALSTACK_ENDPOINT = "http://localhost:4566"
 
 lambda_client = boto3.client("lambda", region_name="us-east-1", endpoint_url=LOCALSTACK_ENDPOINT)
@@ -41,4 +41,4 @@ async def log_event(service_name: str, log_data: dict):
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    uvicorn.run(api, host="0.0.0.0", port=8000)
+    uvicorn.run(api, host="localhost", port=8000)

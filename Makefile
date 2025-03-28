@@ -3,7 +3,7 @@ CDK=npx aws-cdk-local
 STACK_NAME=LambdaS3Stack
 ENDPOINT=http://localhost:4566
 BUCKET_NAME=logs-bucket
-LAMBDA_NAME=LambdaS3Stack-lambdafunction45C982D3-2074fa7a
+LAMBDA_NAME=$(shell awslocal lambda list-functions --query "Functions[?contains(FunctionName, 'lambdafunction')].FunctionName" --output text)
 
 ### CDK ###
 bootstrap:
@@ -27,16 +27,18 @@ stop-localstack:
 
 ### LAMBDA ###
 invoke:
+	curl -s -X GET "http://localhost:8000/get-latest-log/$(service_name)" > log.json && \
+	python -c "import json,sys; data=json.load(sys.stdin); print(json.dumps({'body': json.dumps(data), 'pathParameters': {'service_name': '$(service_name)'}}))" < log.json > request.json && \
 	awslocal lambda invoke \
 		--function-name $(LAMBDA_NAME) \
-		--payload '{ "body": "{\"filename\": \"archivo.txt\", \"content\": \"Desde Makefile!\"}", "pathParameters": {"service_name": "service1"} }' \
+		--payload file://request.json \
 		response.json && cat response.json
 
 list-bucket:
-	awslocal s3 ls s3://$(BUCKET_NAME)
+	awslocal s3 ls s3://$(BUCKET_NAME)/
 
 get-object:
-	awslocal s3 ls s3://$(BUCKET_NAME)/logs/service1/2025/03/27/
+	awslocal s3 ls s3://$(BUCKET_NAME)/logs/$(SERVICE)/$(DATE)/
 
 clean:
 	rm -f response.json
