@@ -1,0 +1,34 @@
+{
+  "version": "36.0.0",
+  "files": {
+    "0ca65c2b1443cae9b4c6efa1f8d5048bbd26bf31f2b5740426e64f4044c18029": {
+      "source": {
+        "path": "asset.0ca65c2b1443cae9b4c6efa1f8d5048bbd26bf31f2b5740426e64f4044c18029",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "000000000000-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-000000000000-us-east-1",
+          "objectKey": "0ca65c2b1443cae9b4c6efa1f8d5048bbd26bf31f2b5740426e64f4044c18029.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-file-publishing-role-000000000000-us-east-1"
+        }
+      }
+    },
+    "4d390ad8ffa99d7e31a12d6efc5e58e3bee731b2c9c0de47cae2e32a49af4af0": {
+      "source": {
+        "path": "LambdaS3Stack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "000000000000-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-000000000000-us-east-1",
+          "objectKey": "4d390ad8ffa99d7e31a12d6efc5e58e3bee731b2c9c0de47cae2e32a49af4af0.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::000000000000:role/cdk-hnb659fds-file-publishing-role-000000000000-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

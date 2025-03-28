@@ -1,4 +1,4 @@
-#!/mnt/c/Users/ragrasba/Downloads/personal_local_aws/personal_local_aws/cdk/.venv/bin/python3
+#!/home/ragrasba/Repo-AWS/cdk/.venv/bin/python3
 
 # Author:
 # Contact: grubert@users.sf.net

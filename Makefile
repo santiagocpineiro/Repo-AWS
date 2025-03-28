@@ -1,9 +1,9 @@
 ### VARIABLES ###
 CDK=npx aws-cdk-local
-STACK_NAME=LambdaS3LocalStack
+STACK_NAME=LambdaS3Stack
 ENDPOINT=http://localhost:4566
-BUCKET_NAME=my-local-bucket
-LAMBDA_NAME=SaveToS3Function
+BUCKET_NAME=logs-bucket
+LAMBDA_NAME=LambdaS3Stack-lambdafunction45C982D3-2074fa7a
 
 ### CDK ###
 bootstrap:
@@ -29,14 +29,17 @@ stop-localstack:
 invoke:
 	awslocal lambda invoke \
 		--function-name $(LAMBDA_NAME) \
-		--payload '{ "filename": "archivo.txt", "content": "Desde Makefile!" }' \
+		--payload '{ "body": "{\"filename\": \"archivo.txt\", \"content\": \"Desde Makefile!\"}", "pathParameters": {"service_name": "service1"} }' \
 		response.json && cat response.json
 
 list-bucket:
 	awslocal s3 ls s3://$(BUCKET_NAME)
 
 get-object:
-	awslocal s3 cp s3://$(BUCKET_NAME)/archivo.txt -
+	awslocal s3 ls s3://$(BUCKET_NAME)/logs/service1/2025/03/27/
 
 clean:
 	rm -f response.json
+
+run-api:
+	python3 api/api.py

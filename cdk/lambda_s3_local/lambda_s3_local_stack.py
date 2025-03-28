@@ -1,25 +1,33 @@
-from aws_cdk import Stack, Environment, aws_lambda as _lambda, aws_s3 as s3
-from aws_cdk import Duration
+from aws_cdk import Stack, RemovalPolicy
 from constructs import Construct
-import os
+import aws_cdk.aws_lambda as _lambda
+import aws_cdk.aws_s3 as s3
+import aws_cdk.aws_iam as iam
 
-class LambdaS3LocalStack(Stack):
-    def __init__(self, scope: Construct, id: str, **kwargs) -> None:
+class LambdaS3Stack(Stack):
+    def __init__(self, scope: Construct, id: str, **kwargs):
         super().__init__(scope, id, **kwargs)
 
-        bucket = s3.Bucket(self, "LocalBucket", bucket_name="my-local-bucket")
+        # Crear el bucket de logs en S3
+        logs_bucket = s3.Bucket(self, "LogsBucket",
+                                bucket_name="logs-bucket",
+                                removal_policy=RemovalPolicy.DESTROY)
 
-        lambda_fn = _lambda.Function(
-            self, "SaveToS3Function",
+        # Crear la función Lambda
+        lambda_function = _lambda.Function(self, "lambda_function",
             runtime=_lambda.Runtime.PYTHON_3_9,
-            function_name="SaveToS3Function",
-            handler="handler.main",
+            handler="handler.lambda_handler",
             code=_lambda.Code.from_asset("lambda_s3_local/lambda_code"),
-            timeout=Duration.seconds(10),
             environment={
-                "BUCKET_NAME": bucket.bucket_name,
-                "LOCALSTACK_ENDPOINT": "http://172.29.47.152:4566"
+                "S3_BUCKET": logs_bucket.bucket_name
             }
         )
 
-        bucket.grant_put(lambda_fn)
+        # Permitir que Lambda escriba en S3
+        logs_bucket.grant_write(lambda_function)
+
+        # Agregar permisos explícitos a Lambda
+        lambda_function.add_to_role_policy(iam.PolicyStatement(
+            actions=["s3:PutObject"],
+            resources=[logs_bucket.arn_for_objects("logs/*")]
+        ))

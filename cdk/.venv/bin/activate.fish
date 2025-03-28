@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /mnt/c/Users/ragrasba/Downloads/personal_local_aws/personal_local_aws/cdk/.venv
+set -gx VIRTUAL_ENV /home/ragrasba/Repo-AWS/cdk/.venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

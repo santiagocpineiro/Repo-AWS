@@ -1,4 +1,4 @@
-#!/mnt/c/Users/ragrasba/Downloads/personal_local_aws/personal_local_aws/cdk/.venv/bin/python3
+#!/home/ragrasba/Repo-AWS/cdk/.venv/bin/python3
 
 # $Id: rst2html.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: David Goodger <goodger@python.org>

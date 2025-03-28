@@ -1,1 +1,1 @@
-{"errorMessage": "Unable to import module 'handler': No module named 'request'", "errorType": "Runtime.ImportModuleError", "requestId": "", "stackTrace": []}
+{"statusCode": 200, "body": "{\"message\": \"Log almacenado en S3\", \"file_path\": \"logs/service1/2025/03/28/2025-03-28T08:01:15.796668.json\"}"}
