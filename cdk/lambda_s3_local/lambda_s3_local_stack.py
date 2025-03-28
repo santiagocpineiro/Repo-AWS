@@ -17,7 +17,7 @@ class LambdaS3Stack(Stack):
         lambda_function = _lambda.Function(self, "lambda_function",
             runtime=_lambda.Runtime.PYTHON_3_9,
             handler="handler.lambda_handler",
-            code=_lambda.Code.from_asset("lambda_s3_local/lambda_code"),
+            code=_lambda.Code.from_asset("lambda_s3_local/dependencias"),
             environment={
                 "S3_BUCKET": logs_bucket.bucket_name
             }
